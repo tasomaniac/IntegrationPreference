@@ -22,7 +22,7 @@ Download
 --------
 
 ```groovy
-compile 'com.tasomaniac:integrationpreference:0.1'
+compile 'com.tasomaniac:integrationpreference:0.1-SNAPSHOT'
 ```
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
