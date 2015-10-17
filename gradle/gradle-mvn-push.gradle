@@ -35,16 +35,29 @@ afterEvaluate { project ->
             mavenDeployer {
                 beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
-                pom.groupId = GROUP
-                pom.artifactId = POM_ARTIFACT_ID
-                pom.version = VERSION_NAME
-
                 repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
                     authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
                 }
                 snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
                     authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
                 }
+
+                addFilter('platform') { artifact, file ->
+                    artifact.name == 'platform'
+                }
+                addFilter('support') {artifact, file ->
+                    artifact.name == 'support'
+                }
+
+                def platformPom = pom("platform")
+                platformPom.groupId = GROUP
+                platformPom.version = VERSION_NAME
+                platformPom.artifactId = POM_ARTIFACT_ID_PLATFORM
+
+                def supportPom = pom("support")
+                supportPom.groupId = GROUP
+                supportPom.version = VERSION_NAME
+                supportPom.artifactId = POM_ARTIFACT_ID_SUPPORT
 
                 pom.project {
                     name POM_NAME
@@ -108,5 +121,8 @@ afterEvaluate { project ->
     artifacts {
         archives androidSourcesJar
         archives androidJavadocsJar
+
+        archives file: file('build/outputs/aar/library-platform-release.aar'), name: 'platform', type: 'aar'
+        archives file: file('build/outputs/aar/library-support-release.aar'), name: 'support', type: 'aar'
     }
 }
