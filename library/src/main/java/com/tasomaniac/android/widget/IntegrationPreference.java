@@ -24,7 +24,6 @@ import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
-import android.preference.CheckBoxPreference;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
@@ -82,8 +81,9 @@ public class IntegrationPreference extends CheckBoxPreference {
     }
 
     @Override
-    protected void onAttachedToActivity() {
-        super.onAttachedToActivity();
+    public void onAttached() {
+        super.onAttached();
+
         originalIntent = getIntent();
         if (originalIntent != null && !hasIntent(integrationIntent)) {
             integrationIntent = marketIntent(originalIntent);
