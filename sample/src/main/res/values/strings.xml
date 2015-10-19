@@ -1,0 +1,38 @@
+<!--
+  ~ Copyright (c) 2015 Said Tahsin Dane
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+  <string name="app_name">Integration Pref Sample</string>
+
+  <string name="pref_key_muzei_integration" translatable="false">pref_muzei_integration</string>
+  <string name="pref_title_muzei_integration">Muzei App Integration</string>
+  <string name="pref_summary_muzei_installed">Open Muzei settings to select this app as your source.</string>
+  <string name="pref_summary_muzei_not_installed">Click here to install Muzei Wallpaper for this app to set your wallpaper.</string>
+
+  <string name="pref_key_dashclock_integration" translatable="false">pref_dashclock_integration</string>
+  <string name="pref_title_dashclock_integration">DashClock App Integration</string>
+  <string name="pref_summary_dashclock_installed">Open DashClock settings to add this application.</string>
+  <string name="pref_summary_dashclock_not_installed">Click here to install DashClock Widget and then enable this app inside DashClock.</string>
+
+  <string name="description_integration_intent_attrs"><![CDATA[
+    This Preference is inflated from XML and have intent as its children.<br>If there is no Activity to handle the given intent, <strong>library will use the provided intent through custom attributes</strong>.
+  ]]></string>
+  <string name="description_integration_auto_intent"><![CDATA[
+    This Preference is inflated from XML and have intent as its children.<br>If there is no Activity to handle the given intent, <strong>library will automatically generate the Play Store link from its package name and will open it.</strong>
+  ]]></string>
+  <string name="pref_key_desc_integration_auto_intent">desc_integration_auto_intent</string>
+  <string name="pref_key_desc_integration_intent_attrs">desc_integration_intent_attrs</string>
+</resources>

@@ -1,0 +1,64 @@
+<!--
+  ~ Copyright (c) 2015 Said Tahsin Dane
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:integration="http://schemas.android.com/apk/com.tasomaniac.widget">
+
+  <PreferenceCategory
+    android:title="Auto Integration">
+
+    <Preference
+      android:key="@string/pref_key_desc_integration_auto_intent"
+      android:selectable="false"
+      android:summary="@string/description_integration_auto_intent"/>
+
+    <!-- Muzei App Preference-->
+    <com.tasomaniac.android.widget.IntegrationPreference
+      android:key="@string/pref_key_muzei_integration"
+      android:summaryOff="@string/pref_summary_muzei_installed"
+      android:summaryOn="@string/pref_summary_muzei_not_installed"
+      android:title="@string/pref_title_muzei_integration">
+      <intent
+        android:targetClass="com.google.android.apps.muzei.settings.SettingsActivity"
+        android:targetPackage="net.nurik.roman.muzei"/>
+    </com.tasomaniac.android.widget.IntegrationPreference>
+  </PreferenceCategory>
+
+
+  <PreferenceCategory
+    android:title="Integration w/ Attributes">
+
+    <Preference
+      android:key="@string/pref_key_desc_integration_intent_attrs"
+      android:selectable="false"
+      android:summary="@string/description_integration_intent_attrs"/>
+
+    <!-- Muzei App Preference-->
+    <com.tasomaniac.android.widget.IntegrationPreference
+      android:key="@string/pref_key_dashclock_integration"
+      android:summaryOff="@string/pref_summary_dashclock_installed"
+      android:summaryOn="@string/pref_summary_dashclock_not_installed"
+      android:title="@string/pref_title_dashclock_integration"
+      integration:integrationIntentAction="android.intent.action.VIEW"
+      integration:integrationIntentData="market://details?id=net.nurik.roman.dashclock">
+      <intent
+        android:targetClass="com.google.android.apps.dashclock.configuration.ConfigurationActivity"
+        android:targetPackage="net.nurik.roman.dashclock"/>
+    </com.tasomaniac.android.widget.IntegrationPreference>
+  </PreferenceCategory>
+
+</PreferenceScreen>
