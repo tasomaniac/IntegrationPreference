@@ -76,6 +76,7 @@ public class IntegrationPreference extends CheckBoxPreference {
         sa.recycle();
 
         setDisableDependentsState(true);
+        setPersistent(false);
 
         appInstallEnabler = new AppInstallEnabler(context, this);
     }
