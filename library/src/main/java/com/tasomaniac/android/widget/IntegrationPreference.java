@@ -24,7 +24,6 @@ import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
@@ -39,8 +38,6 @@ public class IntegrationPreference extends CheckBoxPreference {
 
     Intent originalIntent;
     Intent integrationIntent;
-    @ColorInt
-    int errorTextColor;
 
     public IntegrationPreference(Context context) {
         super(context);
@@ -72,8 +69,6 @@ public class IntegrationPreference extends CheckBoxPreference {
                 R.styleable.IntegrationPreference);
 
         extractIntegrationIntent(sa);
-        errorTextColor = sa.getColor(R.styleable.IntegrationPreference_errorTextColor,
-                ContextCompat.getColor(context, R.color.error_color));
 
         sa.recycle();
 
@@ -193,10 +188,9 @@ public class IntegrationPreference extends CheckBoxPreference {
 
     private SpannableString getErrorString(CharSequence originalString) {
         SpannableString errorSpan = new SpannableString(originalString);
-        if (errorTextColor != 0) {
-            ForegroundColorSpan colorSpan = new ForegroundColorSpan(errorTextColor);
-            errorSpan.setSpan(colorSpan, 0, originalString.length(), 0);
-        }
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(
+                ContextCompat.getColor(getContext(), R.color.error_color));
+        errorSpan.setSpan(colorSpan, 0, originalString.length(), 0);
         return errorSpan;
     }
 }

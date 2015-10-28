@@ -23,8 +23,6 @@
     <attr name="integrationIntentAction" format="string|reference" />
     <attr name="integrationIntentTargetPackage" format="string|reference" />
     <attr name="integrationIntentTargetClass" format="string|reference" />
-    
-    <attr name="errorTextColor" format="color|reference" />
   </declare-styleable>
 
 </resources>
