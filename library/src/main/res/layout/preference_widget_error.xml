@@ -15,16 +15,14 @@
   ~ limitations under the License.
   -->
 
-<resources>
-
-  <declare-styleable name="IntegrationPreference">
-    <attr name="integrationIntentData" format="string|reference" />
-    <attr name="integrationIntentMimeType" format="string|reference" />
-    <attr name="integrationIntentAction" format="string|reference" />
-    <attr name="integrationIntentTargetPackage" format="string|reference" />
-    <attr name="integrationIntentTargetClass" format="string|reference" />
-    
-    <attr name="errorTextColor" format="color|reference" />
-  </declare-styleable>
-
-</resources>
+<CheckBox android:id="@android:id/checkbox"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@null"
+          android:button="@drawable/btn_error"
+          android:clickable="false"
+          android:contentDescription="@null"
+          android:focusable="false"
+          tools:ignore="RtlSymmetry"/>
