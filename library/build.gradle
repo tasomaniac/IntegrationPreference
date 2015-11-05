@@ -26,6 +26,14 @@ android {
 
         }
     }
+
+    lintOptions {
+        abortOnError true
+        textReport true
+        textOutput 'stdout'
+
+        fatal 'UnusedResources'
+    }
 }
 
 dependencies {
