@@ -15,6 +15,8 @@ You put `IntegrationPreference` into your preference XML file and it checks the 
 If it cannot find the application to handle that `Intent`, it opens Play Store on click to install the
 required application.
 
+![](screenshot1.png)
+
 Usage
 -----
 
