@@ -1,7 +1,7 @@
 IntegrationPreference
 =====================
 
-<!-- [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ContentLoadingProgressDialog-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2117) -->
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-IntegrationPreference-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2741)
 [![Build Status](https://travis-ci.org/tasomaniac/IntegrationPreference.png?branch=master)](https://travis-ci.org/tasomaniac/IntegrationPreference)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
