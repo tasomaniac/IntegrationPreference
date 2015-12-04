@@ -30,6 +30,8 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 
+import com.tasomaniac.android.widget.integrationpreference.R;
+
 public class IntegrationPreference extends CheckBoxPreference {
 
     PackageManager packageManager;

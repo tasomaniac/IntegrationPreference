@@ -71,13 +71,13 @@ Download
 Dependency for native `PreferenceActivity` and `PreferenceFragment`
 
 ```groovy
-compile 'com.tasomaniac:integrationpreference:0.1'
+compile 'com.tasomaniac:integrationpreference:0.2'
 ```
 
 Dependency for support versions.
 
 ```groovy
-compile 'com.tasomaniac:integrationpreference-support:0.1'
+compile 'com.tasomaniac:integrationpreference-support:0.2'
 ```
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
