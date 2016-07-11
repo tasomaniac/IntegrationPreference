@@ -11,7 +11,7 @@ has extension capabilities. You can use their SDK to integrate your app into the
 
  Those can be rare cases but this library is just for you.
 
-You put `IntegrationPreference` into your preference XML file and it checks the given `Intent1 inside its XML tags.
+You put `IntegrationPreference` into your preference XML file and it checks the given `Intent` inside its XML tags.
 If it cannot find the application to handle that `Intent`, it opens Play Store on click to install the
 required application.
 
