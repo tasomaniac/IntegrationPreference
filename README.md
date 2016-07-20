@@ -31,6 +31,7 @@ For the basic usage, you need to add `IntegrationPreference` into your preferenc
 
 ```xml
     <com.tasomaniac.android.widget.IntegrationPreference
+      android:title="Preference Title"
       android:key="pref_key"
       android:summaryOff="Description to shown when the Intent is found."
       android:summaryOn="Click here to install the required app.">
@@ -40,7 +41,6 @@ For the basic usage, you need to add `IntegrationPreference` into your preferenc
         android:targetPackage="net.nurik.roman.muzei"/>
 
     </com.tasomaniac.android.widget.IntegrationPreference>
-  </PreferenceCategory>
 ```
 
 And in your `PreferenceFragment` or `PreferenceActivity` you can add these to functions into you `onResume` and
