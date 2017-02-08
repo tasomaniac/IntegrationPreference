@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Said Tahsin Dane
+ * Copyright (c) 2017 Said Tahsin Dane
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,22 +24,17 @@ import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 
-import com.tasomaniac.android.widget.integrationpreference.R;
-
 public class IntegrationPreference extends CheckBoxPreference {
 
-    PackageManager packageManager;
+    private PackageManager packageManager;
+    private AppInstallEnabler appInstallEnabler;
 
-    AppInstallEnabler appInstallEnabler;
-
-    Intent originalIntent;
-    Intent integrationIntent;
+    private Intent originalIntent;
+    private Intent integrationIntent;
 
     public IntegrationPreference(Context context) {
         super(context);
@@ -167,7 +162,7 @@ public class IntegrationPreference extends CheckBoxPreference {
         }
     }
 
-    private boolean hasIntent(@Nullable Intent intent) {
+    private boolean hasIntent(Intent intent) {
         return intent != null
                 && packageManager.resolveActivity(intent, 0) != null;
     }
@@ -190,9 +185,13 @@ public class IntegrationPreference extends CheckBoxPreference {
 
     private SpannableString getErrorString(CharSequence originalString) {
         SpannableString errorSpan = new SpannableString(originalString);
-        ForegroundColorSpan colorSpan = new ForegroundColorSpan(
-                ContextCompat.getColor(getContext(), R.color.error_color));
+        ForegroundColorSpan colorSpan = new ForegroundColorSpan(getColor(R.color.error_color));
         errorSpan.setSpan(colorSpan, 0, originalString.length(), 0);
         return errorSpan;
+    }
+
+    @SuppressWarnings("deprecation")
+    private int getColor(int id) {
+        return getContext().getResources().getColor(id);
     }
 }

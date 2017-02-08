@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Said Tahsin Dane
+ * Copyright (c) 2017 Said Tahsin Dane
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.support.annotation.NonNull;
 
 
-public final class AppInstallEnabler {
+final class AppInstallEnabler {
 
-    private final Context mContext;
-    private IntegrationPreference mPref;
-    private final IntentFilter mIntentFilter;
+    private final Context context;
+    private final IntegrationPreference pref;
+    private final IntentFilter intentFilter;
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -38,31 +37,30 @@ public final class AppInstallEnabler {
         }
     };
 
-    public AppInstallEnabler(@NonNull Context context,
-                             @NonNull IntegrationPreference pref) {
-        mContext = context;
-        mPref = pref;
+    AppInstallEnabler(Context context, IntegrationPreference pref) {
+        this.context = context;
+        this.pref = pref;
 
-        mIntentFilter = new IntentFilter();
-        mIntentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
-        mIntentFilter.addAction(Intent.ACTION_PACKAGE_CHANGED);
-        mIntentFilter.addAction(Intent.ACTION_PACKAGE_REPLACED);
-        mIntentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
-        mIntentFilter.addDataScheme("package");
+        intentFilter = new IntentFilter();
+        intentFilter.addAction(Intent.ACTION_PACKAGE_ADDED);
+        intentFilter.addAction(Intent.ACTION_PACKAGE_CHANGED);
+        intentFilter.addAction(Intent.ACTION_PACKAGE_REPLACED);
+        intentFilter.addAction(Intent.ACTION_PACKAGE_REMOVED);
+        intentFilter.addDataScheme("package");
     }
 
     public void resume() {
 
         handleStateChanged();
-        mContext.registerReceiver(mReceiver, mIntentFilter);
+        context.registerReceiver(mReceiver, intentFilter);
     }
 
     public void pause() {
-        mContext.unregisterReceiver(mReceiver);
+        context.unregisterReceiver(mReceiver);
     }
 
-    void handleStateChanged() {
-        mPref.checkState();
+    private void handleStateChanged() {
+        pref.checkState();
     }
 
 }
