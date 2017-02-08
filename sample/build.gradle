@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Said Tahsin Dane
+ * Copyright (c) 2017 Said Tahsin Dane
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,21 +17,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
-        applicationId "com.tasomaniac.widget.integrationpreference.sample"
-        minSdkVersion 7
-        targetSdkVersion 23
+        applicationId 'com.tasomaniac.widget.integrationpreference.sample'
+        minSdkVersion 9
+        targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+        versionName '1.0'
     }
 }
 
@@ -39,9 +33,9 @@ dependencies {
     debugCompile project(path: ':library', configuration: 'platformDebug')
     releaseCompile project(path: ':library', configuration: 'platformRelease')
 
-    compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.android.support:support-v4:23.1.0'
-    compile 'com.android.support:design:23.1.0'
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.android.support:design:25.1.1'
 
     testCompile 'junit:junit:4.12'
 }
