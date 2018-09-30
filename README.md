@@ -24,7 +24,7 @@ Detailed usage can be found in the sample project and in the following applicati
 
 - https://github.com/tasomaniac/MuzeiEarthView
 - https://github.com/tasomaniac/MuzeiTVShows
-- https://github.com/tasomaniac/spaceapi_dashclock
+- https://github.com/tasomaniac/hackdash
 - https://github.com/tasomaniac/MuzeiComicsCovers
 
 For the basic usage, you need to add `IntegrationPreference` into your preference xml like below.
